@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anagram</title>
+    <title>Anagram Game</title>
     <link rel="stylesheet" href="styles.css"> <!-- Optional: You can create a CSS file for styling -->
 </head>
 <body>
     <div id="container">
-        <h1>The MJM March huddle <br>Anagram Game</h1>
+        <h1>Anagram Game</h1>
         <div id="word"></div>
         <input type="text" id="userInput" placeholder="Enter your guess">
-        <br><br>
-        <button onclick="checkAnagram()">Check</button>
+        <input type="text" id="teamName" placeholder="Enter your team name"> <!-- Add input field for team name -->
+        <button id="checkButton" onclick="checkAnagram()">Check</button>
         <p id="result"></p>
-        <p id="score"></p> <!-- New element to display score -->
+        <p id="score"></p>
+        <form id="scoreForm" netlify> <!-- Add the "netlify" attribute to the form -->
+            <input type="hidden" id="scoreInput" name="score">
+            <input type="hidden" id="teamNameInput" name="teamName">
+            <button type="submit">Submit Score</button>
+        </form>
+        
     </div>
     <script src="script.js"></script> <!-- Linking to JavaScript file -->
 </body>
