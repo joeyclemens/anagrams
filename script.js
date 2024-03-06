@@ -81,14 +81,18 @@ function checkAnagram() {
     }
 }
 
-// Function to handle key press event in input field
-document.getElementById("userInput").addEventListener("keypress", function(event) {
-    // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-        // Cancel the default action, if needed
-        event.preventDefault();
-        // Trigger the button element with a click
-        document.getElementById("checkButton").click();
-    }
+// Function to submit score and team name to the form
+document.getElementById("scoreForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    
+    // Get score and team name
+    let scoreValue = score;
+    let teamNameValue = document.getElementById("teamName").value;
+    
+    // Set score and team name in hidden input fields
+    document.getElementById("scoreInput").value = scoreValue;
+    document.getElementById("teamNameInput").value = teamNameValue;
+    
+    // Submit the form
+    this.submit();
 });
-
