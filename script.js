@@ -10,8 +10,17 @@ let randomWord = getRandomWord();
 // Display the shuffled word
 displayWord(shuffleWord(randomWord));
 
-// Initialize score
+// Initialize or load score from localStorage
+let scoreData = localStorage.getItem('scoreData');
 let score = 0;
+if (scoreData) {
+    scoreData = JSON.parse(scoreData);
+    if (Date.now() - scoreData.timestamp < 24 * 60 * 60 * 1000) {
+        score = scoreData.score;
+    } else {
+        localStorage.removeItem('scoreData');
+    }
+}
 
 // Display initial score
 updateScore();
@@ -55,6 +64,8 @@ function checkAnagram() {
         score++;
         // Update score display
         updateScore();
+        // Store score in localStorage
+        localStorage.setItem('scoreData', JSON.stringify({score: score, timestamp: Date.now()}));
         // Get a new random word
         randomWord = getRandomWord();
         // Display the new shuffled word
@@ -69,3 +80,15 @@ function checkAnagram() {
         document.getElementById("result").innerText = "Incorrect, try again.";
     }
 }
+
+// Function to handle key press event in input field
+document.getElementById("userInput").addEventListener("keypress", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+        // Cancel the default action, if needed
+        event.preventDefault();
+        // Trigger the button element with a click
+        document.getElementById("checkButton").click();
+    }
+});
+
