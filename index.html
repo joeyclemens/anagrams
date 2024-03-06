@@ -9,13 +9,20 @@
 <body>
     <div id="container">
         <h1>Anagram Game</h1>
+
+        <h3>Enter your team name</h3>
+        <input type="text" id="teamName" placeholder="Enter your team name"> <!-- Add input field for team name -->
+        <hr>
+
+        <h3>Enter your guess</h3>
         <div id="word"></div>
         <input type="text" id="userInput" placeholder="Enter your guess">
-        <input type="text" id="teamName" placeholder="Enter your team name"> <!-- Add input field for team name -->
+        
         <button id="checkButton" onclick="checkAnagram()">Check</button>
         <p id="result"></p>
         <p id="score"></p>
-        <form id="scoreForm" data-netlify="true"> <!-- Add the "netlify" attribute to the form -->
+        <hr>
+        <form id="scoreForm" netlify> <!-- Add the "netlify" attribute to the form -->
             <input type="hidden" id="scoreInput" name="score">
             <input type="hidden" id="teamNameInput" name="teamName">
             <button type="submit">Submit Score</button>
