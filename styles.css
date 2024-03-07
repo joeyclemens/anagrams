@@ -1,3 +1,5 @@
+@media (min-width: 600px) {
+
 body {
     font-family: 'IBM Plex Mono', monospace;
     background-color: #f0f0f0;
@@ -170,3 +172,182 @@ p#score {
     cursor: pointer;
   }
   
+}
+
+/* =================================
+============ Mobile view ========== 
+===================================*/
+@media (max-width: 600px) {
+
+    body {
+        font-family: 'IBM Plex Mono', monospace;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #container {
+        max-width: 600px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+        text-align: center;
+        color: #333;
+    }
+    
+    h3 {
+        text-align: center;
+        color: #333;
+    }
+    
+    #word {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    input[type="text"] {
+        width: calc(100% - 90px);
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 10px; /* Add some bottom margin to separate from the button */
+    }
+    
+    button#checkButton {
+        width: 80px;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        background-color: #4CAF50; /* Green */
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    button#checkButton:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+    
+    button#skipButton {
+        width: 100px; /* Adjust button width as needed */
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        background-color: #f44336; /* Red */
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 10px auto; /* Add margin between buttons */
+    }
+    
+    button#skipButton:hover {
+        background-color: #d32f2f; /* Darker red on hover */
+    }
+    
+    
+    button[type="submit"] {
+        width: 120px; /* Adjust button width as needed */
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        background-color: #007bff; /* Blue */
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 10px auto; /* Add margin as needed */
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #00f5fd; /* Darker blue on hover */
+        color: #333;
+    }
+    
+    
+    p#result {
+        text-align: center;
+        color: #333;
+        font-size: 18px;
+        margin-top: 10px;
+    }
+    
+    p#score {
+        text-align: center;
+        color: #333;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    
+    /* Style the Help Button */
+    #helpButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    
+      #helpButton:hover {
+        background-color: #d32f2f;
+      }
+      
+      /* Style the Help Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.4);
+      }
+      
+      /* Modal Content */
+      .modal-content {
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        border-radius: 5px;
+        width: 50%;
+      }
+    
+      /* Remove bullet points from the modal */
+      .modal-content ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+      
+      
+      /* Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }    
