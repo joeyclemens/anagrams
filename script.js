@@ -1,5 +1,22 @@
 // Define an array of words
-let words = ["apple", "banana", "orange", "strawberry", "kiwi", "grape", "pineapple", "blueberry", "watermelon", "peach"];
+let words = [
+    // Animals
+    "tiger", "lion", "elephant", "giraffe", "zebra", "rhino", "hippo", "kangaroo", "koala", "panda",
+    "sloth", "monkey", "gorilla", "chimpanzee", "lemur", "meerkat", "cheetah", "jaguar", "leopard", "hyena",
+    // Objects
+    "table", "chair", "lamp", "couch", "mirror", "clock", "vase", "bookshelf", "television", "radio",
+    "camera", "laptop", "smartphone", "headphones", "sunglasses", "umbrella", "backpack", "suitcase", "wallet", "keychain",
+    // Places
+    "beach", "forest", "desert", "mountain", "river", "lake", "island", "volcano", "canyon", "valley",
+    "glacier", "cave", "waterfall", "jungle", "oasis", "tundra", "savannah", "prairie", "marsh", "wetland",
+    // Food
+    "apple", "banana", "orange", "strawberry", "blueberry", "watermelon", "pineapple", "grape", "cherry", "kiwi",
+    "peach", "pear", "plum", "avocado", "mango", "papaya", "coconut", "lemon", "lime", "fig",
+    // Activities
+    "running", "swimming", "hiking", "cycling", "yoga", "dancing", "painting", "singing", "reading", "writing",
+    "cooking", "gardening", "fishing", "camping", "skiing", "surfing", "climbing", "photography", "meditation", "knitting"
+];
+
 
 // Array to keep track of used words
 let usedWords = [];
@@ -96,3 +113,15 @@ document.getElementById("scoreForm").addEventListener("submit", function(event) 
     // Submit the form
     this.submit();
 });
+
+// Function to skip the current word
+function skipWord() {
+    // Get a new random word
+    randomWord = getRandomWord();
+    // Display the new shuffled word
+    displayWord(shuffleWord(randomWord));
+    // Clear the input field
+    document.getElementById("userInput").value = "";
+    // Clear the result message
+    document.getElementById("result").innerText = "";
+}

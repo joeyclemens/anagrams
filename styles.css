@@ -37,12 +37,12 @@ input[type="text"] {
     margin-bottom: 10px; /* Add some bottom margin to separate from the button */
 }
 
-button {
+button#checkButton {
     width: 80px;
     padding: 10px;
     font-size: 16px;
     border: none;
-    background-color: #4CAF50;
+    background-color: #4CAF50; /* Green */
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -50,9 +50,43 @@ button {
     margin: 0 auto;
 }
 
+button#checkButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
 
-button:hover {
-    background-color: #45a049;
+button#skipButton {
+    width: 100px; /* Adjust button width as needed */
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #f44336; /* Red */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto; /* Add margin between buttons */
+}
+
+button#skipButton:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+button#submit {
+    width: 100px; /* Adjust button width as needed */
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    background-color: #2521ed; /* blue */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto; /* Add margin between buttons */
+}
+
+button#submit:hover {
+    background-color: #00f5fd; /* Darker blue on hover */
+    color: #333;
 }
 
 p#result {

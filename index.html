@@ -19,13 +19,16 @@
         <input type="text" id="userInput" placeholder="Enter your guess">
         
         <button id="checkButton" onclick="checkAnagram()">Check</button>
+        <br>
+        <button id="skipButton" onclick="skipWord()">Skip Word</button>
+
         <p id="result"></p>
         <p id="score"></p>
         <hr>
         <form id="scoreForm" netlify action="/success.html"> <!-- Add the "netlify" attribute to the form -->
             <input type="hidden" id="scoreInput" name="score">
             <input type="hidden" id="teamNameInput" name="teamName">
-            <button type="submit">Submit Score</button>
+            <button id="submit" type="submit">Submit Score</button>
         </form>
         
     </div>
