@@ -125,3 +125,14 @@ function skipWord() {
     // Clear the result message
     document.getElementById("result").innerText = "";
 }
+
+// Function to reset the score to 0
+function resetScore() {
+    // Reset the score to 0
+    score = 0;
+    // Update the score display
+    updateScore();
+    // Clear the localStorage
+    localStorage.removeItem('scoreData');
+}
+
