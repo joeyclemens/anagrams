@@ -71,23 +71,25 @@ button#skipButton:hover {
     background-color: #d32f2f; /* Darker red on hover */
 }
 
-button#submit {
-    width: 100px; /* Adjust button width as needed */
+
+button[type="submit"] {
+    width: 120px; /* Adjust button width as needed */
     padding: 10px;
     font-size: 16px;
     border: none;
-    background-color: #2521ed; /* blue */
+    background-color: #007bff; /* Blue */
     color: white;
     border-radius: 5px;
     cursor: pointer;
     display: block;
-    margin: 10px auto; /* Add margin between buttons */
+    margin: 10px auto; /* Add margin as needed */
 }
 
-button#submit:hover {
+button[type="submit"]:hover {
     background-color: #00f5fd; /* Darker blue on hover */
     color: #333;
 }
+
 
 p#result {
     text-align: center;
