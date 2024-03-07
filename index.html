@@ -4,19 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anagram Game</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Optional: You can create a CSS file for styling -->
+    <link rel="stylesheet" href="styles.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="container">
         <h1>The MJM March Huddle <br>Anagram Game</h1>
 
-        <h3>Enter your team name</h3>
+        <h3><u>Enter your team name</u></h3>
         <input type="text" id="teamName" placeholder="Enter your team name"> <!-- Add input field for team name -->
         <hr>
 
-        <h3>Enter your guess</h3>
+        <h3><u>Unscramble the word</u></h3>
         <div id="word"></div>
-        <input type="text" id="userInput" placeholder="Enter your guess">
+        <input type="text" id="userInput" placeholder="Enter your answer">
         
         <button id="checkButton" onclick="checkAnagram()">Check</button>
         <br>
@@ -30,9 +31,33 @@
             <input type="hidden" id="teamNameInput" name="teamName">
             <button type="submit">Submit Score</button>
         </form>
-        <button id="resetButton" onclick="resetScore()">Reset Score</button>
+
+        <hr>
+        <button id="resetButton" onclick="confirmReset()">Reset Score</button>
+
+        <!-- Help Button -->
+        <button id="helpButton">Need Help?</button>
+
 
     </div>
     <script src="script.js"></script> <!-- Linking to JavaScript file -->
+
+    <!-- Help Modal -->
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Need Help?</h2>
+      <p>Here are some hints:</p>
+      <ul>
+        <li>All the words fit into the following catagories</li>
+        <li>Animals</li>
+        <li>Every day objects</li>
+        <li>Generic places</li>
+        <li>Food</li>
+        <li>Activities</li>
+      </ul>
+    </div>
+  </div>
+  
 </body>
 </html>
