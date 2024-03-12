@@ -14,8 +14,13 @@ let words = [
     "peach", "pear", "plum", "avocado", "mango", "coconut", "lemon", "lime", "fig", "pizza", "bacon", "waffles",
     // Activities
     "running", "swimming", "hiking", "cycling", "yoga", "dancing", "painting", "singing", "reading", "writing",
-    "cooking", "gardening", "fishing", "camping", "skiing", "surfing", "climbing", "photography", "meditation", "knitting"
+    "cooking", "gardening", "fishing", "camping", "skiing", "surfing", "climbing", "photography", "meditation", "knitting",
+    // Healthcare
+    "anaesthetic", "cardiology", "imaging", "theatres", "maternity", "neonatal", "radiotherapy", "ophthalmology",
+    "pharmacy", "renal", "acute", "surgery", "dialysis", "gastroenterology", "haematology", "neurology", "trauma",
+    "orthopaedics", "paediatrics", "medicine"
 ];
+
 
 
 // Array to keep track of used words
