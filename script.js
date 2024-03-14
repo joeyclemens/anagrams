@@ -83,10 +83,19 @@ function checkAnagram() {
         updateScore();
         // Store score in localStorage
         localStorage.setItem('scoreData', JSON.stringify({score: score, timestamp: Date.now()}));
-        // Get a new random word
-        randomWord = getRandomWord();
-        // Display the new shuffled word
-        displayWord(shuffleWord(randomWord));
+        
+        // Check if all words have been used
+        if (usedWords.length === words.length) {
+            displayWord("Game Over");
+            document.getElementById("userInput").disabled = true; // Disable input field
+            document.getElementById("skipButton").disabled = true; // Disable skip button
+        } else {
+            // Get a new random word
+            randomWord = getRandomWord();
+            // Display the new shuffled word
+            displayWord(shuffleWord(randomWord));
+        }
+        
         // Clear the input field
         document.getElementById("userInput").value = "";
         // Clear the result message after 1 second
@@ -116,6 +125,10 @@ document.getElementById("scoreForm").addEventListener("submit", function(event) 
 
 // Function to skip the current word
 function skipWord() {
+    // Decrement the score by 1
+    score--;
+    // Update the score display
+    updateScore();
     // Get a new random word
     randomWord = getRandomWord();
     // Display the new shuffled word
@@ -124,8 +137,14 @@ function skipWord() {
     document.getElementById("userInput").value = "";
     // Clear the result message
     document.getElementById("result").innerText = "";
+    
+    // Check if all words have been used
+    if (usedWords.length === words.length) {
+        displayWord("Game Over");
+        document.getElementById("userInput").disabled = true; // Disable input field
+        document.getElementById("skipButton").disabled = true; // Disable skip button
+    }
 }
-
 
 function confirmReset() {
     var confirmation = confirm("Are you sure you want to reset the score?");
@@ -136,8 +155,6 @@ function confirmReset() {
     }
 }
 
-
-
 // Function to reset the score to 0
 function resetScore() {
     // Reset the score to 0
@@ -146,66 +163,6 @@ function resetScore() {
     updateScore();
     // Clear the localStorage
     localStorage.removeItem('scoreData');
-}
-
-function checkAnagram() {
-    let userInput = document.getElementById("userInput").value.toLowerCase();
-    
-    if (userInput === randomWord) {
-        document.getElementById("result").innerText = "Correct!";
-        // Increment score
-        score++;
-        // Update score display
-        updateScore();
-        // Store score in localStorage
-        localStorage.setItem('scoreData', JSON.stringify({score: score, timestamp: Date.now()}));
-        // Play correct sound
-        let audioCorrect = new Audio('ding.mp3');
-        audioCorrect.play();
-        // Get a new random word
-        randomWord = getRandomWord();
-        // Display the new shuffled word
-        displayWord(shuffleWord(randomWord));
-        // Clear the input field
-        document.getElementById("userInput").value = "";
-        // Clear the result message after 1 second
-        setTimeout(() => {
-            document.getElementById("result").innerText = "";
-        }, 1000);
-    } else {
-        // Animate wrong answer
-        let checkbox = document.getElementById("checkButton");
-        checkbox.style.transition = "transform 0.2s ease-in-out";
-        checkbox.style.transform = "translateX(-10px)";
-        setTimeout(() => {
-            checkbox.style.transform = "translateX(10px)";
-        }, 200);
-        setTimeout(() => {
-            checkbox.style.transform = "translateX(-5px)";
-        }, 400);
-        setTimeout(() => {
-            checkbox.style.transform = "translateX(5px)";
-        }, 600);
-        setTimeout(() => {
-            checkbox.style.transform = "translateX(0)";
-        }, 800);
-        
-        // Change background color temporarily
-        document.body.style.backgroundColor = "#FC0004"; // Red color
-        
-        // Display result message
-        document.getElementById("result").innerText = "Incorrect, try again.";
-        
-        // Play error sound
-        let audioError = new Audio('buzzer.mp3');
-        audioError.play();
-        
-        // Clear the result message and reset background color after 2 seconds
-        setTimeout(() => {
-            document.getElementById("result").innerText = "";
-            document.body.style.backgroundColor = "#f0f0f0"; // Original background color
-        }, 2000);
-    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -235,5 +192,4 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.style.display = "none";
       }
     }
-  });
-  
+});
