@@ -14,6 +14,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 h1 {
@@ -45,57 +46,150 @@ input[type="text"] {
 }
 
 button#checkButton {
-    width: 80px;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    background-color: #4CAF50; /* Green */
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 0 auto;
+  width: auto;
+  position: relative;
+  color: #ecf0f1;
+  text-decoration: none;
+  border-radius: 5px;
+  border: solid 1px #f39c12;
+  background: #e67e22;
+  text-align: center;
+  padding: 16px 18px 14px;
+  margin: 12px;
+  -webkit-box-shadow: 0px 6px 0px #d35400;
+  -moz-box-shadow: 0px 6px 0px #d35400;
+  box-shadow: 0px 6px 0px #d35400;
 }
 
 button#checkButton:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #e67e22;
+    transform: translateY(-2px); /* Move the button slightly up */
+    -webkit-box-shadow: 0px 6px 0px #d35400;
+    -moz-box-shadow: 0px 6px 0px #d35400;
+    box-shadow: 0px 6px 0px #d35400;
+}
+
+button#checkButton:active {
+    background-color: #e67e22;
+    transform: translateY(2px); /* Move the button slightly down */
+    box-shadow: none; /* Remove shadow on active state */
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+  
+    -webkit-box-shadow: 0px 6px 0px #d35400;
+    -moz-box-shadow: 0px 6px 0px #d35400;
+    box-shadow: 0px 1px 0px #d35400;
+
 }
 
 button#skipButton {
-    width: 100px; /* Adjust button width as needed */
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    background-color: #f44336; /* Red */
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 10px auto; /* Add margin between buttons */
+  width: auto;
+  position: relative;
+  color: #ecf0f1;
+  text-decoration: none;
+  border-radius: 5px;
+  border: solid 1px rgb(198, 4, 4);
+  background: red;
+  text-align: center;
+  padding: 16px 18px 14px;
+  margin: 12px;
+  -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  box-shadow: 0px 6px 0px rgb(198, 4, 4);
 }
 
 button#skipButton:hover {
-    background-color: #d32f2f; /* Darker red on hover */
+    background-color: red;
+    transform: translateY(-2px); /* Move the button slightly up */
+    -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    box-shadow: 0px 6px 0px rgb(198, 4, 4);
+}
+button#skipButton:active {
+    background-color: red;
+    transform: translateY(2px); /* Move the button slightly down */
+    box-shadow: none; /* Remove shadow on active state */
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+  
+    -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    box-shadow: 0px 1px 0px rgb(198, 4, 4);
 }
 
-
 button[type="submit"] {
-    width: 120px; /* Adjust button width as needed */
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    background-color: #007bff; /* Blue */
-    color: white;
+    width: auto;
+    position: relative;
+    color: #ecf0f1;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin: 10px auto; /* Add margin as needed */
+    border: solid 1px rgb(0, 0, 151);
+    background: blue;
+    text-align: center;
+    padding: 16px 18px 14px;
+    margin: 12px;
+    -webkit-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+    -moz-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+    box-shadow: 0px 6px 0px rgb(0, 0, 151);
 }
 
 button[type="submit"]:hover {
-    background-color: #00f5fd; /* Darker blue on hover */
-    color: #333;
+    background-color: blue;
+    transform: translateY(-2px); /* Move the button slightly up */
+    -webkit-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+    -moz-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+    box-shadow: 0px 6px 0px rgb(0, 0, 151);
 }
+
+button[type="submit"]:active {
+    background-color: blue;
+    transform: translateY(2px); /* Move the button slightly down */
+    box-shadow: none; /* Remove shadow on active state */
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+  
+    -webkit-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+    -moz-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+    box-shadow: 0px 1px 0px rgb(0, 0, 151);
+}
+
+button#resetButton {
+    width: auto;
+    position: relative;
+    color: #ecf0f1;
+    text-decoration: none;
+    border-radius: 5px;
+    border: solid 1px rgb(198, 4, 4);
+    background: red;
+    text-align: center;
+    padding: 16px 18px 14px;
+    margin: 12px;
+    -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  }
+  
+  button#resetButton:hover {
+      background-color: red;
+      transform: translateY(-2px); /* Move the button slightly up */
+      -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+      -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+      box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  }
+  button#resetButton:active {
+      background-color: red;
+      transform: translateY(2px); /* Move the button slightly down */
+      box-shadow: none; /* Remove shadow on active state */
+      -webkit-transition: all 0.1s;
+      -moz-transition: all 0.1s;
+      transition: all 0.1s;
+    
+      -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+      -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+      box-shadow: 0px 1px 0px rgb(198, 4, 4);
 
 
 p#result {

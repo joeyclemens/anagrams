@@ -1,27 +1,18 @@
-// Define an array of words
-let words = [
-    // Animals
-    "tiger", "lion", "elephant", "giraffe", "zebra", "rhino", "hippo", "kangaroo", "koala", "panda",
-    "sloth", "monkey", "gorilla", "chimpanzee", "lemur", "meerkat", "cheetah", "jaguar", "leopard", "hyena",
-    // Objects
-    "table", "chair", "lamp", "mirror", "clock", "vase", "bookshelf", "television", "radio",
-    "camera", "laptop", "phone", "headphones", "sunglasses", "umbrella", "backpack", "suitcase", "wallet",
-    // Places
-    "beach", "forest", "desert", "mountain", "river", "lake", "island", "volcano", "canyon", "valley",
-    "glacier", "cave", "waterfall", "jungle", "oasis", "tundra", "savannah", "prairie", "marsh", "wetland",
-    // Food
-    "apple", "banana", "orange", "strawberry", "blueberry", "watermelon", "pineapple", "grape", "cherry", "kiwi",
-    "peach", "pear", "plum", "avocado", "mango", "coconut", "lemon", "lime", "fig", "pizza", "bacon", "waffles",
-    // Activities
-    "running", "swimming", "hiking", "cycling", "yoga", "dancing", "painting", "singing", "reading", "writing",
-    "cooking", "gardening", "fishing", "camping", "skiing", "surfing", "climbing", "photography", "meditation", "knitting",
-    // Healthcare
-    "anaesthetic", "cardiology", "imaging", "theatres", "maternity", "neonatal", "radiotherapy", "ophthalmology",
-    "pharmacy", "renal", "acute", "surgery", "dialysis", "gastroenterology", "haematology", "neurology", "trauma",
-    "orthopaedics", "paediatrics", "medicine"
-];
+// Define word sets for each day
+let wordSets = {
+    "2024-04-22": ["serene", "fluffy", "glider", "marvel", "bamboo", "galaxy", "window", "jaguar", "velvet", "octave", "bubble", "guitar", "meadow", "sphere", "radiant", "forest", "summit", "impact", "dragon", "marvel"],
+    "2024-04-12": ["apple", "banana", "orange"],
+    // Add more sets for each day as needed
+};
 
+// Function to get words for the current day
+function getWordsForCurrentDay() {
+    const today = new Date().toISOString().slice(0, 10); // Get today's date in YYYY-MM-DD format
+    return wordSets[today] || []; // Return words for today or an empty array if not available
+}
 
+// Define words array using words for the current day
+let words = getWordsForCurrentDay();
 
 // Array to keep track of used words
 let usedWords = [];
@@ -63,8 +54,13 @@ function getRandomWord() {
 
 // Function to display the shuffled word
 function displayWord(word) {
-    document.getElementById("word").innerText = word;
+    let wordToDisplay = word;
+    if (word !== "Game Over") {
+        wordToDisplay = shuffleWord(word);
+    }
+    document.getElementById("word").innerText = wordToDisplay;
 }
+
 
 // Function to shuffle letters of the word
 function shuffleWord(word) {
@@ -92,8 +88,7 @@ function checkAnagram() {
         // Check if all words have been used
         if (usedWords.length === words.length) {
             displayWord("Game Over");
-            document.getElementById("userInput").disabled = true; // Disable input field
-            document.getElementById("skipButton").disabled = true; // Disable skip button
+            handleGameOver(); // Call handleGameOver when all words are exhausted
         } else {
             // Get a new random word
             randomWord = getRandomWord();
@@ -146,8 +141,7 @@ function skipWord() {
     // Check if all words have been used
     if (usedWords.length === words.length) {
         displayWord("Game Over");
-        document.getElementById("userInput").disabled = true; // Disable input field
-        document.getElementById("skipButton").disabled = true; // Disable skip button
+        handleGameOver(); // Call handleGameOver when all words are exhausted
     }
 }
 
@@ -197,4 +191,44 @@ document.addEventListener("DOMContentLoaded", function() {
         modal.style.display = "none";
       }
     }
+
+    // Check if game over flag is set and date is today
+    let gameOverData = localStorage.getItem('gameOverData');
+    if (gameOverData) {
+        gameOverData = JSON.parse(gameOverData);
+        const today = new Date();
+        const storedDate = new Date(gameOverData.timestamp);
+        if (today.toDateString() === storedDate.toDateString()) {
+            // Game over, disable input field and skip button
+            document.getElementById("userInput").disabled = true;
+            document.getElementById("skipButton").disabled = true;
+        }
+    }
 });
+
+// Function to handle midnight reset
+function handleMidnightReset() {
+    const now = new Date();
+    const resetTime = new Date(now);
+    resetTime.setHours(23, 59, 0, 0); // Set to 11:59 PM
+    const timeUntilReset = resetTime - now;
+
+    // Schedule next reset at 11:59 PM
+    setTimeout(() => {
+        // Clear localStorage to reset game state
+        localStorage.removeItem('gameOverData');
+    }, timeUntilReset);
+}
+
+// Function to handle game over
+function handleGameOver() {
+    // Store game over flag and current date
+    localStorage.setItem('gameOverData', JSON.stringify({ gameOver: true, timestamp: Date.now() }));
+    
+    // Disable input field and skip button
+    document.getElementById("userInput").disabled = true;
+    document.getElementById("skipButton").disabled = true;
+
+    // Handle midnight reset
+    handleMidnightReset();
+}

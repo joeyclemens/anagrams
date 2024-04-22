@@ -9,10 +9,10 @@
 </head>
 <body>
     <div id="container">
-        <h1>The MJM March Huddle <br>Anagram Game</h1>
+        <h1><br>Anagram Game</h1>
 
         <h3><u>Enter your team name</u></h3>
-        <input type="text" id="teamName" placeholder="Enter your team name"> <!-- Add input field for team name -->
+        <input type="text" id="teamName" placeholder="Enter your team name" required>
         <hr>
 
         <h3><u>Unscramble the word</u></h3>
@@ -28,21 +28,21 @@
         <hr>
         <form id="scoreForm" netlify action="/success.html"> <!-- Add the "netlify" attribute to the form -->
             <input type="hidden" id="scoreInput" name="score">
-            <input type="hidden" id="teamNameInput" name="teamName">
+            <input type="hidden" id="teamNameInput" name="teamName" required>
             <button type="submit">Submit Score</button>
         </form>
 
         <hr>
         <button id="resetButton" onclick="confirmReset()">Reset Score</button>
 
-        <!-- Help Button -->
-        <button id="helpButton">Need Help?</button>
+        <!-- Help Button
+        <button id="helpButton">Need Help?</button>-->
 
 
     </div>
     <script src="script.js"></script> <!-- Linking to JavaScript file -->
 
-    <!-- Help Modal -->
+    <!-- Help Modal 
 <div id="helpModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
@@ -61,6 +61,6 @@
       </ul>
     </div>
   </div>
-  
+-->
 </body>
 </html>
