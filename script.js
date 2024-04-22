@@ -77,8 +77,8 @@ function updateScore() {
 
 // Function to check if the input is a valid anagram
 function checkAnagram() {
-    let userInput = document.getElementById("userInput").value.toLowerCase();
-    
+    let userInput = document.getElementById("userInput").value.toLowerCase().trim(); // Trim whitespace
+
     if (userInput === randomWord) {
         document.getElementById("result").innerText = "Correct!";
         // Increment score
@@ -87,7 +87,7 @@ function checkAnagram() {
         updateScore();
         // Store score in localStorage
         localStorage.setItem('scoreData', JSON.stringify({score: score, timestamp: Date.now()}));
-        
+
         // Check if all words have been used
         if (usedWords.length === words.length) {
             displayWord("Game Over");
@@ -98,7 +98,7 @@ function checkAnagram() {
             // Display the new shuffled word
             displayWord(shuffleWord(randomWord));
         }
-        
+
         // Clear the input field
         document.getElementById("userInput").value = "";
         // Clear the result message after 1 second
@@ -109,6 +109,7 @@ function checkAnagram() {
         document.getElementById("result").innerText = "Incorrect, try again.";
     }
 }
+
 
 // Function to submit score and team name to the form
 document.getElementById("scoreForm").addEventListener("submit", function(event) {
