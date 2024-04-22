@@ -1,7 +1,10 @@
 // Define word sets for each day
 let wordSets = {
     "2024-04-22": ["serene", "fluffy", "glider", "marvel", "bamboo", "galaxy", "window", "jaguar", "velvet", "octave", "bubble", "guitar", "meadow", "sphere", "radiant", "forest", "summit", "impact", "dragon", "marvel"],
-    "2024-04-12": ["apple", "banana", "orange"],
+    "2024-04-23": ["river", "tulip", "castle", "pebble", "shadow", "sunset", "banana", "forest", "rocket", "mellow", "lemon", "candle", "peacock", "garden", "ripple", "dancer", "planet", "cradle", "whale", "shovel"],
+    "2024-04-24": ["whisper", "unicorn", "butterfly", "journey", "silence", "mystery", "harmony", "diamond", "twinkle", "crimson", "comedy", "sapphire", "rainbow", "guitar", "sizzle", "laughter", "dazzle", "carousel", "giggly", "gondola"],
+    "2024-04-25": ["lagoon", "flamingo", "zephyr", "blossom", "cascade", "saffron", "velvet", "whisper", "sunset", "horizon", "breeze", "cascade", "mystic", "serenade", "radiance", "journey", "laughter", "triumph", "twinkle", "sapphire"],
+    "2024-04-26": ["echo", "ripple", "serene", "silence", "starry", "dazzle", "whisper", "cascade", "mellow", "sapphire", "harmony", "lullaby", "blossom", "twilight", "whirlwind", "glisten", "triumph", "carousel", "glimmer", "gondola"]
     // Add more sets for each day as needed
 };
 
