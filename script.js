@@ -81,6 +81,8 @@ function checkAnagram() {
 
     if (userInput === randomWord) {
         document.getElementById("result").innerText = "Correct!";
+        // Play the 'ding' sound
+        document.getElementById("correctSound").play();
         // Increment score
         score++;
         // Update score display
@@ -107,8 +109,12 @@ function checkAnagram() {
         }, 1000);
     } else {
         document.getElementById("result").innerText = "Incorrect, try again.";
+        // Play the 'buzzer' sound
+        document.getElementById("incorrectSound").play();
     }
 }
+
+
 
 
 // Function to submit score and team name to the form
