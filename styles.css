@@ -301,6 +301,7 @@ body {
 #cursor {
   visibility: hidden;
 }
+
 #container {
   max-width: 600px;
   margin: 50px auto;

@@ -11,7 +11,7 @@
   <span id="cursor"></span>
     <div id="container">
         
-        <h1><br>Anagram Game</h1>
+        <h1>Anagram Game</h1>
 
         <h3><u>Enter your team name</u></h3>
         <input type="text" id="teamName" placeholder="Enter your team name" required>
@@ -22,7 +22,7 @@
         <input type="text" id="userInput" placeholder="Enter your answer">
         
         <button id="checkButton" onclick="checkAnagram()">Check</button>
-        <br>
+        
         <button id="skipButton" onclick="skipWord()">Skip Word</button>
 
         <p id="result"></p>
@@ -32,10 +32,9 @@
             <input type="hidden" id="scoreInput" name="score">
             <input type="hidden" id="teamNameInput" name="teamName" required>
             <button type="submit">Submit Score</button>
+         <!--    <button id="resetButton" onclick="confirmReset()">Reset Score</button>-->
         </form>
 
-        <hr>
-        <button id="resetButton" onclick="confirmReset()">Reset Score</button>
 
         <!-- Help Button
         <button id="helpButton">Need Help?</button>-->
