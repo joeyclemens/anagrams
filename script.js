@@ -273,3 +273,21 @@ document.addEventListener("mousemove", function(event) {
     customCursor.style.left = event.clientX + "px";
     customCursor.style.top = event.clientY + "px";
 });
+
+// JavaScript to toggle cursor visibility based on screen width
+function toggleCursorVisibility() {
+    var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var body = document.body;
+    
+    if (screenWidth <= 600) {
+        // Hide the custom cursor on mobile devices
+        body.style.cursor = 'default'; // or any other default cursor style
+    } else {
+        // Show the custom cursor on larger screens
+        body.style.cursor = 'none';
+    }
+}
+
+// Call the function initially and whenever the window is resized
+toggleCursorVisibility();
+window.addEventListener('resize', toggleCursorVisibility);
