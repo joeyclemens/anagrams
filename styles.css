@@ -1,10 +1,12 @@
 
+@media only screen and (min-width: 600px) {
 
 body {
     font-family: 'IBM Plex Mono', monospace;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    cursor: none;
 }
 
 #container {
@@ -43,6 +45,7 @@ input[type="text"] {
     display: block;
     margin: 0 auto;
     margin-bottom: 10px; /* Add some bottom margin to separate from the button */
+    cursor: none;
 }
 
 button#checkButton {
@@ -59,6 +62,7 @@ button#checkButton {
   -webkit-box-shadow: 0px 6px 0px #d35400;
   -moz-box-shadow: 0px 6px 0px #d35400;
   box-shadow: 0px 6px 0px #d35400;
+  cursor: none;
 }
 
 button#checkButton:hover {
@@ -67,6 +71,7 @@ button#checkButton:hover {
     -webkit-box-shadow: 0px 6px 0px #d35400;
     -moz-box-shadow: 0px 6px 0px #d35400;
     box-shadow: 0px 6px 0px #d35400;
+    cursor: none;
 }
 
 button#checkButton:active {
@@ -76,7 +81,7 @@ button#checkButton:active {
     -webkit-transition: all 0.1s;
     -moz-transition: all 0.1s;
     transition: all 0.1s;
-  
+    cursor: none;
     -webkit-box-shadow: 0px 6px 0px #d35400;
     -moz-box-shadow: 0px 6px 0px #d35400;
     box-shadow: 0px 1px 0px #d35400;
@@ -97,6 +102,7 @@ button#skipButton {
   -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
   -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
   box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  cursor: none;
 }
 
 button#skipButton:hover {
@@ -105,6 +111,7 @@ button#skipButton:hover {
     -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
     -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
     box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    cursor: none;
 }
 button#skipButton:active {
     background-color: red;
@@ -113,7 +120,7 @@ button#skipButton:active {
     -webkit-transition: all 0.1s;
     -moz-transition: all 0.1s;
     transition: all 0.1s;
-  
+    cursor: none;
     -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
     -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
     box-shadow: 0px 1px 0px rgb(198, 4, 4);
@@ -133,6 +140,7 @@ button[type="submit"] {
     -webkit-box-shadow: 0px 6px 0px rgb(0, 0, 151);
     -moz-box-shadow: 0px 6px 0px rgb(0, 0, 151);
     box-shadow: 0px 6px 0px rgb(0, 0, 151);
+    cursor: none;
 }
 
 button[type="submit"]:hover {
@@ -141,6 +149,7 @@ button[type="submit"]:hover {
     -webkit-box-shadow: 0px 6px 0px rgb(0, 0, 151);
     -moz-box-shadow: 0px 6px 0px rgb(0, 0, 151);
     box-shadow: 0px 6px 0px rgb(0, 0, 151);
+    cursor: none;
 }
 
 button[type="submit"]:active {
@@ -150,7 +159,7 @@ button[type="submit"]:active {
     -webkit-transition: all 0.1s;
     -moz-transition: all 0.1s;
     transition: all 0.1s;
-  
+    cursor: none;
     -webkit-box-shadow: 0px 6px 0px rgb(0, 0, 151);
     -moz-box-shadow: 0px 6px 0px rgb(0, 0, 151);
     box-shadow: 0px 1px 0px rgb(0, 0, 151);
@@ -170,6 +179,7 @@ button#resetButton {
     -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
     -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
     box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    cursor: none;
   }
   
   button#resetButton:hover {
@@ -178,6 +188,7 @@ button#resetButton {
       -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
       -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
       box-shadow: 0px 6px 0px rgb(198, 4, 4);
+      cursor: none;
   }
   button#resetButton:active {
       background-color: red;
@@ -186,7 +197,7 @@ button#resetButton {
       -webkit-transition: all 0.1s;
       -moz-transition: all 0.1s;
       transition: all 0.1s;
-    
+      cursor: none;
       -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
       -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
       box-shadow: 0px 1px 0px rgb(198, 4, 4);
@@ -214,11 +225,12 @@ p#score {
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
+    cursor: none;
   }
 
   #helpButton:hover {
     background-color: #d32f2f;
+    cursor: none;
   }
   
   /* Style the Help Modal */
@@ -268,3 +280,296 @@ p#score {
   
 }
 
+
+}
+
+
+/* ===============================================================
+   ========================Mobile View============================
+   =============================================================== */
+@media only screen and (max-width: 600px) {
+
+
+body {
+  font-family: 'IBM Plex Mono', monospace;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  
+}
+
+#cursor {
+  visibility: hidden;
+}
+#container {
+  max-width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+h3 {
+  text-align: center;
+  color: #333;
+}
+
+#word {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+input[type="text"] {
+  width: calc(100% - 90px);
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px; /* Add some bottom margin to separate from the button */
+  
+}
+
+button#checkButton {
+width: auto;
+position: relative;
+color: #ecf0f1;
+text-decoration: none;
+border-radius: 5px;
+border: solid 1px #f39c12;
+background: #e67e22;
+text-align: center;
+padding: 16px 18px 14px;
+margin: 12px;
+-webkit-box-shadow: 0px 6px 0px #d35400;
+-moz-box-shadow: 0px 6px 0px #d35400;
+box-shadow: 0px 6px 0px #d35400;
+
+}
+
+button#checkButton:hover {
+  background-color: #e67e22;
+  transform: translateY(-2px); /* Move the button slightly up */
+  -webkit-box-shadow: 0px 6px 0px #d35400;
+  -moz-box-shadow: 0px 6px 0px #d35400;
+  box-shadow: 0px 6px 0px #d35400;
+  
+}
+
+button#checkButton:active {
+  background-color: #e67e22;
+  transform: translateY(2px); /* Move the button slightly down */
+  box-shadow: none; /* Remove shadow on active state */
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+ 
+  -webkit-box-shadow: 0px 6px 0px #d35400;
+  -moz-box-shadow: 0px 6px 0px #d35400;
+  box-shadow: 0px 1px 0px #d35400;
+
+}
+
+button#skipButton {
+width: auto;
+position: relative;
+color: #ecf0f1;
+text-decoration: none;
+border-radius: 5px;
+border: solid 1px rgb(198, 4, 4);
+background: red;
+text-align: center;
+padding: 16px 18px 14px;
+margin: 12px;
+-webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+-moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+box-shadow: 0px 6px 0px rgb(198, 4, 4);
+
+}
+
+button#skipButton:hover {
+  background-color: red;
+  transform: translateY(-2px); /* Move the button slightly up */
+  -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  
+}
+button#skipButton:active {
+  background-color: red;
+  transform: translateY(2px); /* Move the button slightly down */
+  box-shadow: none; /* Remove shadow on active state */
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+  
+  -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  box-shadow: 0px 1px 0px rgb(198, 4, 4);
+}
+
+button[type="submit"] {
+  width: auto;
+  position: relative;
+  color: #ecf0f1;
+  text-decoration: none;
+  border-radius: 5px;
+  border: solid 1px rgb(0, 0, 151);
+  background: blue;
+  text-align: center;
+  padding: 16px 18px 14px;
+  margin: 12px;
+  -webkit-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+  -moz-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+  box-shadow: 0px 6px 0px rgb(0, 0, 151);
+  
+}
+
+button[type="submit"]:hover {
+  background-color: blue;
+  transform: translateY(-2px); /* Move the button slightly up */
+  -webkit-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+  -moz-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+  box-shadow: 0px 6px 0px rgb(0, 0, 151);
+ 
+}
+
+button[type="submit"]:active {
+  background-color: blue;
+  transform: translateY(2px); /* Move the button slightly down */
+  box-shadow: none; /* Remove shadow on active state */
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+  transition: all 0.1s;
+  
+  -webkit-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+  -moz-box-shadow: 0px 6px 0px rgb(0, 0, 151);
+  box-shadow: 0px 1px 0px rgb(0, 0, 151);
+}
+
+button#resetButton {
+  width: auto;
+  position: relative;
+  color: #ecf0f1;
+  text-decoration: none;
+  border-radius: 5px;
+  border: solid 1px rgb(198, 4, 4);
+  background: red;
+  text-align: center;
+  padding: 16px 18px 14px;
+  margin: 12px;
+  -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  box-shadow: 0px 6px 0px rgb(198, 4, 4);
+  
+}
+
+button#resetButton:hover {
+    background-color: red;
+    transform: translateY(-2px); /* Move the button slightly up */
+    -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    box-shadow: 0px 6px 0px rgb(198, 4, 4);
+   
+}
+button#resetButton:active {
+    background-color: red;
+    transform: translateY(2px); /* Move the button slightly down */
+    box-shadow: none; /* Remove shadow on active state */
+    -webkit-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    transition: all 0.1s;
+    
+    -webkit-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    -moz-box-shadow: 0px 6px 0px rgb(198, 4, 4);
+    box-shadow: 0px 1px 0px rgb(198, 4, 4);
+
+
+p#result {
+  text-align: center;
+  color: #333;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+p#score {
+  text-align: center;
+  color: #333;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+/* Style the Help Button */
+#helpButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  
+}
+
+#helpButton:hover {
+  background-color: #d32f2f;
+  
+}
+
+/* Style the Help Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 30%;
+}
+
+/* Remove bullet points from the modal */
+.modal-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+
+/* Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+}
+
+}

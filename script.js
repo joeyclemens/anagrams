@@ -1,6 +1,6 @@
 // Define word sets for each day
 let wordSets = {
-    "2024-04-22": ["serene", "fluffy", "glider", "marvel", "bamboo", "galaxy", "window", "jaguar", "velvet", "octave", "bubble", "guitar", "meadow", "sphere", "radiant", "forest", "summit", "impact", "dragon", "marvel"],
+    "2024-05-08": ["serene", "fluffy", "glider", "marvel", "bamboo", "galaxy", "window", "jaguar", "velvet", "octave", "bubble", "guitar", "meadow", "sphere", "radiant", "forest", "summit", "impact", "dragon", "marvel"],
     "2024-04-23": ["river", "tulip", "castle", "pebble", "shadow", "sunset", "banana", "forest", "rocket", "mellow", "lemon", "candle", "peacock", "garden", "ripple", "dancer", "planet", "cradle", "whale", "shovel"],
     "2024-04-24": ["whisper", "unicorn", "butterfly", "journey", "silence", "mystery", "harmony", "diamond", "twinkle", "crimson", "comedy", "sapphire", "rainbow", "guitar", "sizzle", "laughter", "dazzle", "carousel", "giggly", "gondola"],
     "2024-04-25": ["lagoon", "flamingo", "zephyr", "blossom", "cascade", "saffron", "velvet", "whisper", "sunset", "horizon", "breeze", "cascade", "mystic", "serenade", "radiance", "journey", "laughter", "triumph", "twinkle", "sapphire"],
@@ -87,6 +87,8 @@ function checkAnagram() {
         score++;
         // Update score display
         updateScore();
+        // Change background color to green
+        document.body.style.backgroundColor = "#4CAF50"; // Green color
         // Store score in localStorage
         localStorage.setItem('scoreData', JSON.stringify({score: score, timestamp: Date.now()}));
 
@@ -106,13 +108,23 @@ function checkAnagram() {
         // Clear the result message after 1 second
         setTimeout(() => {
             document.getElementById("result").innerText = "";
+            // Reset background color
+            document.body.style.backgroundColor = "#f0f0f0"; // Default background color
         }, 1000);
     } else {
         document.getElementById("result").innerText = "Incorrect, try again.";
         // Play the 'buzzer' sound
         document.getElementById("incorrectSound").play();
+        // Change background color to red
+        document.body.style.backgroundColor = "#FF5733"; // Red color
+        // Clear the background color after 1 second
+        setTimeout(() => {
+            // Reset background color
+            document.body.style.backgroundColor = "#f0f0f0"; // Default background color
+        }, 1000);
     }
 }
+
 
 
 
@@ -242,3 +254,22 @@ function handleGameOver() {
     // Handle midnight reset
     handleMidnightReset();
 }
+
+
+// Create a new image element for the custom cursor
+var customCursor = document.createElement("img");
+customCursor.src = "custom-cursor.png";
+customCursor.style.position = "fixed";
+customCursor.style.pointerEvents = "none"; // Ensure the cursor doesn't interfere with clicks
+customCursor.style.zIndex = "9999"; // Make sure the cursor appears above other elements
+customCursor.style.width = "32px"; // Adjust the width and height as needed
+customCursor.style.height = "32px";
+
+// Add the custom cursor to the body
+document.body.appendChild(customCursor);
+
+// Update the position of the custom cursor to follow the mouse movement
+document.addEventListener("mousemove", function(event) {
+    customCursor.style.left = event.clientX + "px";
+    customCursor.style.top = event.clientY + "px";
+});
