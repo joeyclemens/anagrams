@@ -287,3 +287,35 @@ if (!isMobileDevice()) {
 } else {
     console.log("Custom cursor is disabled on mobile devices.");
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Find the form element
+    const form = document.getElementById('scoreForm');
+
+    // Add event listener for form submission
+    form.addEventListener('submit', function (event) {
+        // Find the team name input
+        const teamNameInput = document.getElementById('teamName');
+        
+        // Check if the team name is not filled out
+        if (teamNameInput.value.trim() === '') {
+            // Prevent the form submission
+            event.preventDefault();
+            
+            // Display an error message (you can customize this part)
+            alert('Please enter your team name!');
+        } else {
+            // Get score and team name
+            let scoreValue = score;
+            let teamNameValue = teamNameInput.value.trim();
+            
+            // Set score and team name in hidden input fields
+            document.getElementById("scoreInput").value = scoreValue;
+            document.getElementById("teamNameInput").value = teamNameValue;
+            
+            // Submit the form
+            this.submit();
+        }
+    });
+});
+
