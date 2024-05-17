@@ -574,3 +574,9 @@ p#score {
 }
 
 }
+
+@media (max-width: 768px) {
+  body {
+      cursor: auto; /* Default cursor for mobile devices */
+  }
+}

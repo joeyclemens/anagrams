@@ -255,27 +255,35 @@ function handleGameOver() {
     handleMidnightReset();
 }
 
-
 // Function to detect if the device is mobile
 function isMobileDevice() {
-    return /Mobi|Android/i.test(navigator.userAgent);
+    return /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
 }
 
-// Create a new image element for the custom cursor
-var customCursor = document.createElement("img");
-customCursor.src = "custom-cursor.png";
-customCursor.style.position = "fixed";
-customCursor.style.pointerEvents = "none"; // Ensure the cursor doesn't interfere with clicks
-customCursor.style.zIndex = "9999"; // Make sure the cursor appears above other elements
-customCursor.style.width = "32px"; // Adjust the width and height as needed
-customCursor.style.height = "32px";
+// Log device type for debugging
+console.log("Is mobile device: ", isMobileDevice());
 
-// Add the custom cursor to the body
-document.body.appendChild(customCursor);
+// Only apply custom cursor if the device is not mobile
+if (!isMobileDevice()) {
+    document.addEventListener("DOMContentLoaded", function() {
+        // Create a new image element for the custom cursor
+        var customCursor = document.createElement("img");
+        customCursor.src = "custom-cursor.png"; // Ensure you have the correct path to the cursor image
+        customCursor.style.position = "fixed";
+        customCursor.style.pointerEvents = "none"; // Ensure the cursor doesn't interfere with clicks
+        customCursor.style.zIndex = "9999"; // Make sure the cursor appears above other elements
+        customCursor.style.width = "32px"; // Adjust the width and height as needed
+        customCursor.style.height = "32px";
 
-// Update the position of the custom cursor to follow the mouse movement
-document.addEventListener("mousemove", function(event) {
-    customCursor.style.left = event.clientX + "px";
-    customCursor.style.top = event.clientY + "px";
-});
+        // Add the custom cursor to the body
+        document.body.appendChild(customCursor);
 
+        // Update the position of the custom cursor to follow the mouse movement
+        document.addEventListener("mousemove", function(event) {
+            customCursor.style.left = event.clientX + "px";
+            customCursor.style.top = event.clientY + "px";
+        });
+    });
+} else {
+    console.log("Custom cursor is disabled on mobile devices.");
+}
