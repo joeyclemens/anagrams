@@ -1,6 +1,6 @@
 // Define word sets for each day
 let wordSets = {
-    "2024-05-08": ["serene", "fluffy", "glider", "marvel", "bamboo", "galaxy", "window", "jaguar", "velvet", "octave", "bubble", "guitar", "meadow", "sphere", "radiant", "forest", "summit", "impact", "dragon", "marvel"],
+    "2024-05-17": ["serene", "fluffy", "glider", "marvel", "bamboo", "galaxy", "window", "jaguar", "velvet", "octave", "bubble", "guitar", "meadow", "sphere", "radiant", "forest", "summit", "impact", "dragon", "marvel"],
     "2024-04-23": ["river", "tulip", "castle", "pebble", "shadow", "sunset", "banana", "forest", "rocket", "mellow", "lemon", "candle", "peacock", "garden", "ripple", "dancer", "planet", "cradle", "whale", "shovel"],
     "2024-04-24": ["whisper", "unicorn", "butterfly", "journey", "silence", "mystery", "harmony", "diamond", "twinkle", "crimson", "comedy", "sapphire", "rainbow", "guitar", "sizzle", "laughter", "dazzle", "carousel", "giggly", "gondola"],
     "2024-04-25": ["lagoon", "flamingo", "zephyr", "blossom", "cascade", "saffron", "velvet", "whisper", "sunset", "horizon", "breeze", "cascade", "mystic", "serenade", "radiance", "journey", "laughter", "triumph", "twinkle", "sapphire"],
@@ -255,6 +255,11 @@ function handleGameOver() {
     handleMidnightReset();
 }
 
+
+// Function to detect if the device is mobile
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
 
 // Create a new image element for the custom cursor
 var customCursor = document.createElement("img");
