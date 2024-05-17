@@ -298,7 +298,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
         // Customized prompt message
-        const teamName = prompt("Please enter your team name and submit your score:");
+        const teamName = prompt("Please enter your Team Name/Name and submit your score:");
 
         // Check if the team name is not empty and user clicked OK
         if (teamName && teamName.trim() !== '') {
@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.submit();
         } else {
             // If team name is empty or user clicked Cancel, inform them and do nothing
-            alert("Cant get enough I see.");
+            alert("Back to the Anagrams you go...");
         }
     });
 });
