@@ -8,19 +8,21 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
+  <span id="cursor"></span>
     <div id="container">
-        <h1><br>Anagram Game</h1>
+        
+        <h1>Anagram Game</h1>
 
-        <h3><u>Enter your team name</u></h3>
+         <!--<h3><u>Enter your team name</u></h3>
         <input type="text" id="teamName" placeholder="Enter your team name" required>
-        <hr>
+        <hr>-->
 
         <h3><u>Unscramble the word</u></h3>
         <div id="word"></div>
         <input type="text" id="userInput" placeholder="Enter your answer">
         
         <button id="checkButton" onclick="checkAnagram()">Check</button>
-        <br>
+        
         <button id="skipButton" onclick="skipWord()">Skip Word</button>
 
         <p id="result"></p>
@@ -30,37 +32,24 @@
             <input type="hidden" id="scoreInput" name="score">
             <input type="hidden" id="teamNameInput" name="teamName" required>
             <button type="submit">Submit Score</button>
+         <!--    <button id="resetButton" onclick="confirmReset()">Reset Score</button>-->
         </form>
 
-        <hr>
-        <button id="resetButton" onclick="confirmReset()">Reset Score</button>
-
-        <!-- Help Button
-        <button id="helpButton">Need Help?</button>-->
 
 
-    </div>
+    <audio id="correctSound">
+      <source src="ding.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <audio id="incorrectSound">
+      <source src="buzzer.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    
     <script src="script.js"></script> <!-- Linking to JavaScript file -->
 
-    <!-- Help Modal 
-<div id="helpModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Need Help?</h2>
-      
-      <ul>
-        <li>All the words fit into one of the following catagories:</li>
-        <li>Animals</li>
-        <li>Every day objects</li>
-        <li>Generic places</li>
-        <li>Food</li>
-        <li>Activities</li>
-        <li>Healthcare</li>
-        <br>
-    <li>There are about 100 words to unscramble. Good luck!</li>
-      </ul>
-    </div>
-  </div>
--->
+
+
 </body>
 </html>

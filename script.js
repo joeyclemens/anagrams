@@ -1,6 +1,6 @@
 // Define word sets for each day
 let wordSets = {
-    "2024-06-17": ["serene", "fluffy", "glider", "marvel", "bamboo", "galaxy", "window", "jaguar", "velvet", "octave", "bubble", "guitar", "meadow", "sphere", "radiant", "forest", "summit", "impact", "dragon", "marvel"],
+    "2024-04-22": ["serene", "fluffy", "glider", "marvel", "bamboo", "galaxy", "window", "jaguar", "velvet", "octave", "bubble", "guitar", "meadow", "sphere", "radiant", "forest", "summit", "impact", "dragon", "marvel"],
     "2024-04-23": ["river", "tulip", "castle", "pebble", "shadow", "sunset", "banana", "forest", "rocket", "mellow", "lemon", "candle", "peacock", "garden", "ripple", "dancer", "planet", "cradle", "whale", "shovel"],
     "2024-04-24": ["whisper", "unicorn", "butterfly", "journey", "silence", "mystery", "harmony", "diamond", "twinkle", "crimson", "comedy", "sapphire", "rainbow", "guitar", "sizzle", "laughter", "dazzle", "carousel", "giggly", "gondola"],
     "2024-04-25": ["lagoon", "flamingo", "zephyr", "blossom", "cascade", "saffron", "velvet", "whisper", "sunset", "horizon", "breeze", "cascade", "mystic", "serenade", "radiance", "journey", "laughter", "triumph", "twinkle", "sapphire"],
@@ -81,10 +81,14 @@ function checkAnagram() {
 
     if (userInput === randomWord) {
         document.getElementById("result").innerText = "Correct!";
+        // Play the 'ding' sound
+        document.getElementById("correctSound").play();
         // Increment score
         score++;
         // Update score display
         updateScore();
+        // Change background color to green
+        document.body.style.backgroundColor = "#4CAF50"; // Green color
         // Store score in localStorage
         localStorage.setItem('scoreData', JSON.stringify({score: score, timestamp: Date.now()}));
 
@@ -104,11 +108,25 @@ function checkAnagram() {
         // Clear the result message after 1 second
         setTimeout(() => {
             document.getElementById("result").innerText = "";
+            // Reset background color
+            document.body.style.backgroundColor = "#f0f0f0"; // Default background color
         }, 1000);
     } else {
         document.getElementById("result").innerText = "Incorrect, try again.";
+        // Play the 'buzzer' sound
+        document.getElementById("incorrectSound").play();
+        // Change background color to red
+        document.body.style.backgroundColor = "#FF5733"; // Red color
+        // Clear the background color after 1 second
+        setTimeout(() => {
+            // Reset background color
+            document.body.style.backgroundColor = "#f0f0f0"; // Default background color
+        }, 1000);
     }
 }
+
+
+
 
 
 // Function to submit score and team name to the form
@@ -236,3 +254,68 @@ function handleGameOver() {
     // Handle midnight reset
     handleMidnightReset();
 }
+
+// Function to detect if the device is mobile
+function isMobileDevice() {
+    return /Mobi|Android/i.test(navigator.userAgent) || window.innerWidth <= 768;
+}
+
+// Log device type for debugging
+console.log("Is mobile device: ", isMobileDevice());
+
+// Only apply custom cursor if the device is not mobile
+if (!isMobileDevice()) {
+    document.addEventListener("DOMContentLoaded", function() {
+        // Create a new image element for the custom cursor
+        var customCursor = document.createElement("img");
+        customCursor.src = "custom-cursor.png"; // Ensure you have the correct path to the cursor image
+        customCursor.style.position = "fixed";
+        customCursor.style.pointerEvents = "none"; // Ensure the cursor doesn't interfere with clicks
+        customCursor.style.zIndex = "9999"; // Make sure the cursor appears above other elements
+        customCursor.style.width = "32px"; // Adjust the width and height as needed
+        customCursor.style.height = "32px";
+
+        // Add the custom cursor to the body
+        document.body.appendChild(customCursor);
+
+        // Update the position of the custom cursor to follow the mouse movement
+        document.addEventListener("mousemove", function(event) {
+            customCursor.style.left = event.clientX + "px";
+            customCursor.style.top = event.clientY + "px";
+        });
+    });
+} else {
+    console.log("Custom cursor is disabled on mobile devices.");
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Find the form element
+    const form = document.getElementById('scoreForm');
+
+    // Add event listener for form submission
+    form.addEventListener('submit', function (event) {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+
+        // Customized prompt message
+        const teamName = prompt("Please enter your Team Name/Name and submit your score:");
+
+        // Check if the team name is not empty and user clicked OK
+        if (teamName && teamName.trim() !== '') {
+            // Get score
+            let scoreValue = score;
+
+            // Set score and team name in hidden input fields
+            document.getElementById("scoreInput").value = scoreValue;
+            document.getElementById("teamNameInput").value = teamName.trim();
+
+            // Submit the form
+            this.submit();
+        } else {
+            // If team name is empty or user clicked Cancel, inform them and do nothing
+            alert("Back to the Anagrams you go...");
+        }
+    });
+});
+
+
