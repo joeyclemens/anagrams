@@ -10,8 +10,28 @@ let wordSets = {
 // Function to get words for the current day
 function getWordsForCurrentDay() {
     const today = new Date().toISOString().slice(0, 10); // Get today's date in YYYY-MM-DD format
-    return wordSets[today] || []; // Return words for today or an empty array if not available
+    const words = wordSets[today] || []; // Get words for today or empty array if not available
+
+    // Set theme header based on current day
+    let themeHeader = document.getElementById("themeHeader");
+    switch (today) {
+        case "2024-07-01":
+            themeHeader.innerText = "Theme: Medical Related";
+            break;
+        case "2024-07-02":
+            themeHeader.innerText = "Theme: Movies";
+            break;
+        case "2024-07-03":
+            themeHeader.innerText = "Theme: Countries";
+            break;
+        default:
+            themeHeader.innerText = "Theme: Unknown"; // Handle any other day (optional)
+            break;
+    }
+
+    return words;
 }
+
 
 // Define words array using words for the current day
 let words = getWordsForCurrentDay();
@@ -316,4 +336,3 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
-
