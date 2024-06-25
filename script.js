@@ -25,7 +25,7 @@ function getWordsForCurrentDay() {
             themeHeader.innerText = "Todays Theme is: Countries";
             break;
         default:
-            themeHeader.innerText = "We are not playing today"; // Handle any other day (optional)
+            themeHeader.innerText = "We are not playing today im afraid. Joey will let you know when the game is back on."; // Handle any other day (optional)
             break;
     }
 
