@@ -15,17 +15,17 @@ function getWordsForCurrentDay() {
     // Set theme header based on current day
     let themeHeader = document.getElementById("themeHeader");
     switch (today) {
-        case "2024-06-25":
-            themeHeader.innerText = "Theme: Medical Related";
+        case "2024-07-01":
+            themeHeader.innerText = "Todays Theme is: Medical Related";
             break;
         case "2024-07-02":
-            themeHeader.innerText = "Theme: Movies";
+            themeHeader.innerText = "Todays Theme is: Movies";
             break;
         case "2024-07-03":
-            themeHeader.innerText = "Theme: Countries";
+            themeHeader.innerText = "Todays Theme is: Countries";
             break;
         default:
-            themeHeader.innerText = "Theme: Unknown"; // Handle any other day (optional)
+            themeHeader.innerText = "We are not playing today"; // Handle any other day (optional)
             break;
     }
 
