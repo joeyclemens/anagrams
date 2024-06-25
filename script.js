@@ -1,10 +1,9 @@
 // Define word sets for each day
 let wordSets = {
     "2024-07-01": ["antibiotic", "cardiology", "dermatology", "endoscopy", "pathology", "ultrasound", "syringe", "x-ray", "nebulizer", "dialysis ", "incubator", "inhaler", "injection", "analyser", "hoist", "surgery", "theatre", "maternity", "mortuary", "inpatients", "outpatients"],
-    "2024-06-25": ["inception", "titanic", "avatar", "jurrasic park", "the matrix","interstellar","star wars","casablanca","the terminator","mad max","jaws","rocky","gladiator","the godfather","pulp fiction","the dark knight","the lord of the rings","the silence of the lambs"],
-    "2024-04-24": ["whisper", "unicorn", "butterfly", "journey", "silence", "mystery", "harmony", "diamond", "twinkle", "crimson", "comedy", "sapphire", "rainbow", "guitar", "sizzle", "laughter", "dazzle", "carousel", "giggly", "gondola"],
-    "2024-04-25": ["lagoon", "flamingo", "zephyr", "blossom", "cascade", "saffron", "velvet", "whisper", "sunset", "horizon", "breeze", "cascade", "mystic", "serenade", "radiance", "journey", "laughter", "triumph", "twinkle", "sapphire"],
-    "2024-04-26": ["echo", "ripple", "serene", "silence", "starry", "dazzle", "whisper", "cascade", "mellow", "sapphire", "harmony", "lullaby", "blossom", "twilight", "whirlwind", "glisten", "triumph", "carousel", "glimmer", "gondola"]
+    "2024-07-02": ["inception", "titanic", "avatar", "jurrasic park", "the matrix","interstellar","star wars","casablanca","the terminator","mad max","jaws","rocky","gladiator","the godfather","pulp fiction","the dark knight","the lord of the rings","the silence of the lambs"],
+    "2024-07-03": ["afghanistan", "albania", "algeria", "argentina", "australia","austria", "bangladesh", "belgium", "brazil", "canada","chad", "chile", "china", "colombia", "denmark","egypt", "finland", "france", "germany", "greece","hungary", "india", "iran", "ireland", "italy","japan", "kenya", "mexico", "morocco", "netherlands","nigeria", "norway", "pakistan", "poland", "russia","spain", "sweden", "thailand", "turkey", "vietnam"],
+   
     // Add more sets for each day as needed
 };
 
