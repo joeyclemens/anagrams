@@ -1,7 +1,7 @@
 // Define word sets for each day
 let wordSets = {
-    "2024-09-16": ["antibiotic", "cardiology", "dermatology", "endoscopy", "pathology", "ultrasound", "syringe", "x-ray", "nebulizer", "dialysis ", "incubator", "inhaler", "injection", "analyser", "hoist", "surgery", "theatre", "maternity", "mortuary", "inpatients", "outpatients"],
-    "2024-07-02": ["inception", "titanic", "avatar", "jurrasic park", "the matrix","interstellar","star wars","casablanca","the terminator","mad max","jaws","rocky","gladiator","the godfather","pulp fiction","the dark knight","the lord of the rings","the silence of the lambs"],
+    "2024-09-17": ["antibiotic", "cardiology", "dermatology", "endoscopy", "pathology", "ultrasound", "syringe", "x-ray", "nebulizer", "dialysis ", "incubator", "inhaler", "injection", "analyser", "hoist", "surgery", "theatre", "maternity", "mortuary", "inpatients", "outpatients"],
+    "2024-09-16": ["inception", "titanic", "avatar", "jurrasic park", "the matrix","interstellar","star wars","casablanca","the terminator","mad max","jaws","rocky","gladiator","the godfather","pulp fiction","the dark knight","the lord of the rings","the silence of the lambs"],
     "2024-07-03": ["afghanistan", "albania", "algeria", "argentina", "australia","austria", "bangladesh", "belgium", "brazil", "canada","chad", "chile", "china", "colombia", "denmark","egypt", "finland", "france", "germany", "greece","hungary", "india", "iran", "ireland", "italy","japan", "kenya", "mexico", "morocco", "netherlands","nigeria", "norway", "pakistan", "poland", "russia","spain", "sweden", "thailand", "turkey", "vietnam"],
    
     // Add more sets for each day as needed
@@ -16,7 +16,7 @@ function getWordsForCurrentDay() {
     let themeHeader = document.getElementById("themeHeader");
     switch (today) {
         case "2024-09-16":
-            themeHeader.innerText = "Todays Theme is: Healthcare";
+            themeHeader.innerText = "Todays Theme is: Movies";
             break;
         case "2024-07-02":
             themeHeader.innerText = "Todays Theme is: Movies";
