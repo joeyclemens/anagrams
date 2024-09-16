@@ -15,8 +15,8 @@ function getWordsForCurrentDay() {
     // Set theme header based on current day
     let themeHeader = document.getElementById("themeHeader");
     switch (today) {
-        case "2024-07-01":
-            themeHeader.innerText = "Todays Theme is: Medical Related";
+        case "2024-09-16":
+            themeHeader.innerText = "Todays Theme is: Healthcare";
             break;
         case "2024-07-02":
             themeHeader.innerText = "Todays Theme is: Movies";
